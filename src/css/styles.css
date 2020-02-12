@@ -1,0 +1,26 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.text-box {
+  display: block;
+  width: 720px;
+};
+
+body{
+  background: #000;
+};
+
+.container{
+  background-color: #000;
+};
+
+.article-list{
+  background: #000;
+}
