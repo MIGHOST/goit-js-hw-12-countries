@@ -1,10 +1,17 @@
-{{#each this}}
+
 <li>
+
     <article>
-        <img src="{{urlToImage}}" alt="">
-        <h2>{{title}}</h2>
-        <p>Author:{{author}}</p>
-        <p>{{description}}</p>
+        <img src="{{flag}}" alt="pictures" width="480">
+        <h2>{{name}}</h2>
+        <p>Capital:{{capital}}</p>
+        <p>Population: {{population}}</p>
+        <ul>Language:
+             {{#each languages}}
+        <li class="tag-list__item">{{this}}</li>      
+        {{/each}}
+            </ul>
     </article>
+
 </li>
-{{/each}}
+
