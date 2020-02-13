@@ -8,19 +8,58 @@ html {
   box-sizing: inherit;
 }
 
-.text-box {
+img {
   display: block;
-  width: 720px;
-};
+  max-width: 100%;
+  height: auto;
+}
 
-body{
-  background: #000;
-};
-
-.container{
-  background-color: #000;
-};
+.search-input {
+  width: 640px;
+  height: 50px;
+	font-size: 13px;
+	padding: 10px 0 10px 10px;
+	border: 1px solid #cecece;
+	background: #F6F6f6;
+  border-radius: 8px;
+  font: 400 24px "Cambria", serif;
+  margin-top: 15px;
+  margin-left: 15px;
+}
 
 .article-list{
-  background: #000;
+  display: block;
+  width: 720px;
+}
+
+.box{
+  display: flex;
+  justify-content: space-between;
+}
+
+.container__title{
+  text-align: center;
+  font: 500 45px "Cambria", serif;
+}
+p{
+  font: 500 24px "Cambria", serif;
+}
+span{
+  font: 700 24px "Cambria", serif;
+}
+.box-list__item{
+  font: 500 24px "Cambria", serif;
+  padding-bottom: 10px;
+}
+.box-list{
+  list-style-type: disc;
+ 
+}
+.box-text__langueges{
+  font: 700 24px "Cambria", serif;
+
+}
+
+.box-img {
+  width: 320px;
 }

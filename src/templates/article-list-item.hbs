@@ -1,18 +1,18 @@
 {{#each this}}
-<h2 class="country-content__title">{{name}}</h2>
-<div class="country-content-box">
-  <div class="content-box-left">
-    <p class="content-box-left__capital"><span>Capital: </span>{{capital}}</p>
-    <p class="content-box-left__population"><span>Population: </span>{{population}}</p>
-    <p class="content-box-left__langueges">Languages:</p>
-    <ul class="content-box-list">
+<h2 class="container__title">{{name}}</h2>
+<div class="box">
+  <div class="box-text">
+    <p class="box-text__capital"><span>Capital: </span>{{capital}}</p>
+    <p class="box-text__population"><span>Population: </span>{{population}}</p>
+    <p class="box-text__langueges">Languages:</p>
+    <ul class="box-list">
       {{#each languages}}
-      <li class="content-box-list__item">{{name}}</li>
+      <li class="box-list__item">{{name}}</li>
       {{/each}}
     </ul>
   </div>
-  <div class="content-box-right">
-    <img src="{{flag}}" alt="{{name}}" class="content-box-right__image">
+  <div class="box-img">
+    <img src="{{flag}}" class="box-img__image">
   </div>
 </div>
 {{/each}}
