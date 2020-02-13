@@ -60,6 +60,12 @@ span{
 
 }
 
+.countries-list__item{
+  margin-left: 50px;
+  font: 500 24px "Cambria", serif;
+}
+
 .box-img {
   width: 320px;
+  
 }

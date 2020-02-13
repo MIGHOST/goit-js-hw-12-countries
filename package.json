@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/luxplanjay/webpack-starter-kit/issues"
   },
-  "homepage": "https://github.com/luxplanjay/webpack-starter-kit#readme",
+  "homepage": "https://mighost.github.io/goit-js-hw-12-countries",
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/plugin-proposal-class-properties": "^7.5.5",
@@ -52,6 +52,7 @@
     "core-js": "^3.3.4",
     "debounce": "^1.2.0",
     "handlebars": "^4.5.3",
+    "lodash.debounce": "^4.0.8",
     "pnotify": "^4.0.0"
   }
 }

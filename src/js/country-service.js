@@ -1,6 +1,6 @@
 
-import articleListItemTamplate from "../templates/article-list-item.hbs";
-import countryList from "../templates/item-coutries.hbs";
+import articleListItem from "../templates/article-list-item.hbs";
+import countryList from "../templates/item-countries.hbs";
 import fetchCountry from "./services/services";
 import { debounce } from "debounce";
 import PNotify from 'pnotify/dist/es/PNotify';;
@@ -14,24 +14,15 @@ const refs = {
 
 refs.searchInput.addEventListener("input", debounce(searchInputValue, 500));
 
-// function searchInputValue(e) {
-//   const input = e.target.value; 
-//   generalFetch(input)
-  
-// };
-
 function searchInputValue(e) {
-  e.preventDefault();
   const input = e.target.value; 
-  clearListItems();
-  fetchCountry(input)
-  .then(country => {
-    insertListItems(country)
-  }); 
+  generalFetch(input);
+  console.log(input)
+  
 };
 
 function insertListItems(items) {
-  const markup = articleListItemTamplate(items);
+  const markup = articleListItem(items);
   refs.articleList.insertAdjacentHTML("beforeend", markup)
 };
 function insertList(item){
@@ -44,31 +35,36 @@ function clearListItems() {
   refs.boxCountry.innerHTML = "";
 };
 
-// function reanderCountry (country){
-// if(country.length >=2 && country.length<=10 ){
-//   insertListItems(country);
-// } else if(country.length === 1){
-//   insertList(country)
-// } else if (country.length>10){
-//   PNotify.error({
-//     title: 'Desktop Error',
-//     text: 'Too many matches found. Pleace enter a more specific query'   
-//   });
-// } else{
-//   PNotify.error({
-//     title: 'Desktop Error',
-//     text: 'Can not found you query'   
-//   });
-// }
-// };
+function renderCountry (country){
+if(country.length >=2 && country.length<=10 ){
+  insertList(country)
+  
+} else if(country.length === 1){
+  insertListItems(country);
+} else if (country.length>10){
+  PNotify.error({
+    title: 'Desktop Error',
+    text: 'Too many matches found. Please enter a more specific query',
+    delay: 5000,        
+  });
+} else{
+  PNotify.error({
+    title: 'Desktop Error',
+    text: 'Can not found you query',
+    delay: 5000   
+  });
+}
+console.log(country)
+};
 
-// function generalFetch (countryName) {
-//   clearListItems();
-//   if (countryName === "")
-//   {
-//     return;
-//   }
-// fetchCountry(countryName)
-// .then(countries=>reanderCountry(countries))
-// .catch(error=>console.warn(console.error));
-// };
+function generalFetch (countryName) {
+  clearListItems();
+  if (countryName === "")
+  {
+    return;
+  }
+fetchCountry(countryName)
+.then(countries=>{renderCountry(countries)
+console.log(countries)})
+.catch(error=>console.warn(console.error));
+};
