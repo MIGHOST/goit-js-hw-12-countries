@@ -17,7 +17,7 @@ refs.searchInput.addEventListener("input", debounce(searchInputValue, 500));
 function searchInputValue(e) {
   const input = e.target.value; 
   generalFetch(input);
-  console.log(input)
+
   
 };
 
@@ -54,7 +54,6 @@ if(country.length >=2 && country.length<=10 ){
     delay: 5000   
   });
 }
-console.log(country)
 };
 
 function generalFetch (countryName) {
@@ -64,7 +63,6 @@ function generalFetch (countryName) {
     return;
   }
 fetchCountry(countryName)
-.then(countries=>{renderCountry(countries)
-console.log(countries)})
+.then(countries=>renderCountry(countries))
 .catch(error=>console.warn(console.error));
 };
